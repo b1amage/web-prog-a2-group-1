@@ -24,11 +24,16 @@ setTimeout( () => {
     
     // If the variable cookieBannerDisplayed is not exist, we start the code block
     if (!localStorage.getItem("cookieBannerDisplayed")) {
+
+
         // Change the active CSS for the box message to pop up 
         cookieContainer.classList.add("active");
 
         // Display the overlay to avoid the user to click or hover to the main website
         document.getElementById('overlay-cookies').style.display = 'block';
+
+                //Freeze the screen to avoid user scrolling
+                document.getElementById('full-html').style.overflow = 'hidden';
     }
 }, 1000);
 
