@@ -140,18 +140,21 @@ function validateForm() {
     return validateEmail() && validatePhone() && validatePassword() && validateRePassword() && validatePersonalInfo() && validateZipcode();
 }
 
+// A function to display the additional fields for store owner when the chosen account type is Store owner
 function showHide() {
     let storeOwner = document.getElementById("store-owner");
     let shopper = document.getElementById("shopper");
-    let hidden = document.getElementById("hidden");
-    let visible = document.getElementById("visible");
+    let hidden = document.getElementById("hidden"); // the style to hide the additional fields
+    let visible = document.getElementById("visible"); // the style to show the additional fields
+    
     if (storeOwner.checked) {
-        hidden.id = "visible";
+        hidden.id = "visible"; // show the additional fields when the chosen account type is Store owner
     } else if (shopper.checked){
-        visible.id = "hidden";
+        visible.id = "hidden"; // hide the additional fields when the chosen accoutn type is Shopper
     }
 }
 
+// Invoke the showHide() function when Store owner or Shopper account type is chosen
 document.getElementById("store-owner").onclick = showHide;
 document.getElementById("shopper").onclick = showHide;
 
