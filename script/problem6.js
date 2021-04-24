@@ -139,3 +139,19 @@ function validateZipcode() {
 function validateForm() {
     return validateEmail() && validatePhone() && validatePassword() && validateRePassword() && validatePersonalInfo() && validateZipcode();
 }
+
+function showHide() {
+    let storeOwner = document.getElementById("store-owner");
+    let shopper = document.getElementById("shopper");
+    let hidden = document.getElementById("hidden");
+    let visible = document.getElementById("visible");
+    if (storeOwner.checked) {
+        hidden.id = "visible";
+    } else if (shopper.checked){
+        visible.id = "hidden";
+    }
+}
+
+document.getElementById("store-owner").onclick = showHide;
+document.getElementById("shopper").onclick = showHide;
+

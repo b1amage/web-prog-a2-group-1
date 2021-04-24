@@ -186,9 +186,15 @@
                     </div>
                 </div>
                 <h3 class="center">Account type</h3>
-                <input required type="radio" name="account" value="shopper" id="shopper"><label for="shopper">Shopper</label>
-                <input required type="radio" name="account" value="store-owner" id="store-owner"><label for="store-owner">Store owner</label>
-                <div class="hidden">
+                <div id="radio-check">
+                    <div id="shopper-account">
+                        <input required type="radio" name="account" value="shopper" id="shopper"><label for="shopper">Shopper</label>
+                    </div>
+                    <div id="store-owner-account">
+                        <input required type="radio" name="account" value="store-owner" id="store-owner"><label for="store-owner">Store owner</label>
+                    </div>
+                </div>
+                <div id="hidden">
                     <input id="business" type="text" name="business-name" pattern="[a-zA-Z]*" placeholder="Business name" title="Only text is allowed">
                     <input id="store-name" type="text" name="store-name" pattern="[a-zA-Z]*" placeholder="Store name" title="Only text is allowed">
                     <div class="store-category">
