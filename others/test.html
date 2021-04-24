@@ -1,23 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- <!DOCTYPE html>
+<html>
+  
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- <style>
-        input:checked ~ h1 {
-            color: red;
-        }
-    </style> -->
+    <title>
+        How to detect browser or tab closing
+    </title>
 </head>
+  
 <body>
-
-<!-- <input type="checkbox" name="" id="">
-<h1>hello</h1> -->
-
-
-
-<a href="mailto:marinbnl001@gmail.com">Email</a>
+    <h1 style="color: green">
+        GeeksforGeeks
+    </h1>
+      
+    <b>Detect browser or tab closing</b>
+      
+    <p>
+        The beforeunload function is triggered
+        just before the browser or tab is to be
+        closed or the page is to be reloaded.
+        Modern browsers require some interaction
+        with the page, otherwise the dialog box
+        is not shown.
+    </p>
+      
+    <form>
+        <textarea placeholder = "Trigger an 
+         interaction by writing something here">
+        </textarea>
+    </form>
+      
+    <script type="text/javascript">
+        window.addEventListener('beforeunload', function (e) {
+            e.preventDefault();
+            e.returnValue = '';
+        });
+    </script>
 </body>
-</html>
+  
+</html>                     -->

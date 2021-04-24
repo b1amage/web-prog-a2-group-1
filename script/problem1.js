@@ -37,4 +37,8 @@ setTimeout( () => {
     }
 }, 1000);
 
+// window.BeforeUnloadEvent = () => {
+//     localStorage.removeItem("cookieBannerDisplayed");
+// }
+
 
