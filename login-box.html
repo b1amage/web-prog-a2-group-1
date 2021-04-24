@@ -88,9 +88,9 @@
 
     <main>
         <div id="login-box">
-            <form action="#" method="get">
-                <input required type="text" name="text" autocomplete="off" placeholder="Email or phone number">  
-                <input required type="password" name="password" placeholder="Password">
+            <form action="#" method="get" onsubmit="return checkPassword()">
+                <input required type="text" id="email/phone" name="text" autocomplete="off" placeholder="Email or phone number">  
+                <input required type="password" id="password" name="password" placeholder="Password">
                 <input type="submit" name="button-submit" value="Login">
                 <div id="forgot-password">
                     <a href="forgot-password.html" target="auto_blank">Forgot password?</a>
@@ -117,6 +117,7 @@
         </nav>
     </footer>
     <script src="./script/problem1.js" defer></script>
+    <script src="./script/problem5.js" defer></script>
     </body>
     
 

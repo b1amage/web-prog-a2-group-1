@@ -143,18 +143,31 @@ function validateForm() {
 // A function to display the additional fields for store owner when the chosen account type is Store owner
 function showHide() {
     let storeOwner = document.getElementById("store-owner");
-    let shopper = document.getElementById("shopper");
-    let hidden = document.getElementById("hidden"); // the style to hide the additional fields
-    let visible = document.getElementById("visible"); // the style to show the additional fields
-    
+    let additional = document.getElementById("additional");
+
     if (storeOwner.checked) {
-        hidden.id = "visible"; // show the additional fields when the chosen account type is Store owner
-    } else if (shopper.checked){
-        visible.id = "hidden"; // hide the additional fields when the chosen accoutn type is Shopper
+        // Remove class "hidden" and add class "visible" to show additional fields
+        additional.classList.remove("hidden");
+        additional.classList.add("visible")
+    } else {
+        // Remove class "visible" and add class "hidden" to hide additonal fields
+        additional.classList.remove("visible");
+        additional.classList.add("hidden");
     }
+}
+
+// A function to hide the additional fields when the users reset the form
+function clear() {
+    let additional = document.getElementById("additional");
+
+    // Remove class "visible" and add class "hidden" to hide additonal fields
+    additional.classList.remove("visible");
+    additional.classList.add("hidden");
 }
 
 // Invoke the showHide() function when Store owner or Shopper account type is chosen
 document.getElementById("store-owner").onclick = showHide;
 document.getElementById("shopper").onclick = showHide;
 
+// Invoke the clear() function when the user reset the form
+document.getElementById("clear").onclick = clear;

@@ -196,11 +196,11 @@ input:not([type=radio], [type=submit], [type=reset], [type=file]):focus {
     margin: 0 5px;
 }
 
-#hidden {
+.hidden {
     display: none;
 }
 
-#visible {
+.visible {
     display: grid;
     margin: 5px 10%;
     width: 80%;
