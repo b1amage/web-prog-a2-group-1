@@ -139,12 +139,16 @@ a.nav__mobile-link {
     list-style: none;
 }
 
-.nav__mobile-link{
+.nav__mobile-link {
     text-decoration: none;
     color: black;
     display: block;
     font-size: 1.4rem;
     padding: 0px 0px;
+}
+
+.my-account {
+    text-decoration: none;
 }
 
 .nav__mobile-link:hover{
