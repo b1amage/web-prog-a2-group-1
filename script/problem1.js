@@ -35,7 +35,7 @@ setTimeout( () => {
                 //Freeze the screen to avoid user scrolling
                 document.getElementById('full-html').style.overflow = 'hidden';
     }
-}, 1000);
+}, 500);
 
 // window.BeforeUnloadEvent = () => {
 //     localStorage.removeItem("cookieBannerDisplayed");
