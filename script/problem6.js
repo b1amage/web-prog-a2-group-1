@@ -27,16 +27,17 @@ function validatePhone() {
     // The regex to check the valid form of phone number 
     let checkPhone = /^(?=[^\.])(?=[^\-])(?=[^\s])[0-9 .-]*[\d]$/;
 
-    // The variable to count the number of digits in phone number
-    let numberOfDigits = 0;
-
     // Check if phone number has double dots, spaces or dashes
-    if (phone.includes("..") || phone.includes("  ") || phone.includes("--")) {
-        alert("Invalid double symbols in phone field");
-        return false;
+    let symbols = " .-";
+    for (let i = 0; i <= phone.length - 2; i++) {
+        if(symbols.indexOf(phone[i]) !== -1 && symbols.indexOf(phone[i + 1]) !== -1) {
+            alert("Invalid phone number");
+            return false;
+        } 
     }
 
     // Count how many digits in phone number
+    let numberOfDigits = 0;
     for (let i = 0; i < phone.length; i++) {
         if (Number.isInteger(parseInt(phone[i]))) {
             numberOfDigits++;
@@ -53,7 +54,7 @@ function validatePhone() {
     if (checkPhone.test(phone)) {
         return true;
     } else {
-        alert("Invalid phone format");
+        alert("Invalid phone number");
         return false;
     }
 }
@@ -144,15 +145,23 @@ function validateForm() {
 function showHide() {
     let storeOwner = document.getElementById("store-owner");
     let additional = document.getElementById("additional");
-
+    let business = document.getElementById("business");
+    let storeName = document.getElementById("store-name");
+    let storeCategory = document.getElementById("store-category");
     if (storeOwner.checked) {
         // Remove class "hidden" and add class "visible" to show additional fields
         additional.classList.remove("hidden");
         additional.classList.add("visible")
+        business.required = true;
+        storeName.required = true;
+        storeCategory.required = true;
     } else {
         // Remove class "visible" and add class "hidden" to hide additonal fields
         additional.classList.remove("visible");
         additional.classList.add("hidden");
+        business.required = false;
+        storeName.required = false;
+        storeCategory.required = false;
     }
 }
 
