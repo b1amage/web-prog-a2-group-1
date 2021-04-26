@@ -9,7 +9,7 @@ cookieButton.addEventListener("click", () => {
     cookieContainer.classList.remove("active");
 
     // Create a variable in the local storage to checked if it is clicked
-    localStorage.setItem("cookieBannerDisplayed", "true");
+    sessionStorage.setItem("cookieBannerDisplayed", "true");
 
     // If the button is clicked, we will not display the box anymore, set the display atttribute to none
     document.getElementById('overlay-cookies').style.display = 'none';
@@ -23,7 +23,7 @@ cookieButton.addEventListener("click", () => {
 setTimeout( () => {
     
     // If the variable cookieBannerDisplayed is not exist, we start the code block
-    if (!localStorage.getItem("cookieBannerDisplayed")) {
+    if (!sessionStorage.getItem("cookieBannerDisplayed")) {
 
 
         // Change the active CSS for the box message to pop up 
