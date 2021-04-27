@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="./css/cookies.css">
+    <link rel="stylesheet" href="./css/add-to-cart.css">
+    
 </head>
 <body>
     <div id="overlay-cookies"></div>
@@ -19,6 +21,8 @@
         <button class="cookie-btn">I understand</button>
         <a href="#">Learn more</a>
     </div>
+
+
     <header>
         <main>
             <nav class="first-nav">
@@ -88,8 +92,8 @@
 
     <main class="grid-container">
         <div class="description">
-            <h1>Nike Jordan 1 Dior</h1>
-            <h2>$2000</h2>
+            <h1 id="product-name">Nike Jordan 1 Dior</h1>
+            <h2 id="product-price">$2000</h2>
             <details>
                 <summary>Choose your size</summary>
                 <p>40 - 8.5US</p>
@@ -99,8 +103,8 @@
                 <p>44 - 10.5US</p>
                 <p>45 - 11US</p>
             </details>
-            <button><a href="#">Add to my cart</a></button>
-            <button><a href="./order_placement.html">Buy Now</a></button>
+            <button id="add-btn"><a href="#">Add to my cart</a></button>
+            <button id="buynow-btn"><a href="./order_placement.html">Buy Now</a></button>
         </div>
         <div class="product-img"></div>
         <div class="related flex-0">
@@ -154,5 +158,6 @@
     </footer>
     <script src="./script/problem1.js" defer></script>
     <script src="./script/problem5/checkLogin.js" defer></script>
+    <script src="./script/problem7.js" defer></script>
 </body>
 </html>
