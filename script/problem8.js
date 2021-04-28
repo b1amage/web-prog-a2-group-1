@@ -6,6 +6,7 @@ var product1Box = document.querySelector('.product-1');
 var product2Box = document.querySelector('.product-2');
 var product3Box = document.querySelector('.product-3');
 
+
 if (localStorage.getItem('productName1')) {
 
 
@@ -67,6 +68,8 @@ function calculatePrice() {
 
     if ((price1 * quantity1 + price2 * quantity2 + price3 * quantity3) == 0) {
         document.getElementById('ship-price').innerHTML = 0 + '$';
+    } else {
+        document.getElementById('ship-price').innerHTML = 60 + '$';
     }
  
     var shipPrice = parseInt(document.getElementById('ship-price').innerHTML)
