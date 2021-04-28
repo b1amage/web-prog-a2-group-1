@@ -64,12 +64,16 @@ function calculatePrice() {
     // var discount = checkDiscount();
     
     productPrice.innerHTML = (price1 * quantity1 + price2 * quantity2 + price3 * quantity3) + '$'
+
+    if ((price1 * quantity1 + price2 * quantity2 + price3 * quantity3) == 0) {
+        document.getElementById('ship-price').innerHTML = 0 + '$';
+    }
  
     var shipPrice = parseInt(document.getElementById('ship-price').innerHTML)
 
     var totalPrice = ((price1 * quantity1 + price2 * quantity2 + price3 * quantity3) + shipPrice);
 
-    console.log(totalPrice)
+    // console.log(totalPrice)
 
     document.getElementById('total-price').innerHTML = totalPrice + '$'
 }
@@ -85,6 +89,7 @@ function checkDiscount() {
     var quantity1 = parseInt(document.getElementById('quantity1').value);
     var quantity2 = parseInt(document.getElementById('quantity2').value);
     var quantity3 = parseInt(document.getElementById('quantity3').value);
+
 
     var shipPrice = parseInt(document.getElementById('ship-price').innerHTML);
 
@@ -119,4 +124,4 @@ document.getElementById('quantity2').addEventListener('change', calculatePrice);
 document.getElementById('quantity3').addEventListener('change', calculatePrice);
 
 
-document.getElementById('discount').onchange = checkDiscount;
+document.getElementById('submit-discount-btn').onclick = checkDiscount;
