@@ -12,7 +12,8 @@ function checkPassword() {
         return true;
     } else {
         // Alert the error message when the password is invalid
-        alert("Wrong password");
+        let errorMessage = document.getElementById("error");
+        errorMessage.style.display = 'block';
         return false;
     }
 }
