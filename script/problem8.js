@@ -76,7 +76,6 @@ function calculatePrice() {
 
     var totalPrice = ((price1 * quantity1 + price2 * quantity2 + price3 * quantity3) + shipPrice);
 
-    // console.log(totalPrice)
 
     document.getElementById('total-price').innerHTML = totalPrice + '$'
 }
