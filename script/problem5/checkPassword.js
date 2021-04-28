@@ -11,7 +11,7 @@ function checkPassword() {
         sessionStorage.setItem("login-email", email);
         return true;
     } else {
-        // Alert the error message when the password is invalid
+        // Display the error message when the password is invalid
         let errorMessage = document.getElementById("error");
         errorMessage.style.display = 'block';
         return false;
