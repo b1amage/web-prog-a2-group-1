@@ -88,7 +88,7 @@
     <main>
         <h1 class="title">Contact form</h1>
         <div class="container">
-            <form method="get" action="index.html" enctype="text/plain">
+            <form method="get" action="#" enctype="text/plain" onsubmit="return validateform()">
             <div clas="contact_form">
                 <label class="purpose" for="cont_pur">Your purpose of contact</label>
                 <select id="cont_pur">
@@ -125,7 +125,8 @@
             <div class="contact_form">
                 <label class="message" for="msg">Your message:</label>
                 <br>
-                <textarea id="msg" name="message" rows="15" cols="150" placeholder="Enter your message here!"></textarea>
+                <textarea id="msg" name="message" rows="15" cols="150" placeholder="Enter your message here!" onkeyup="myFunction(event)" onkeydown="myFunction2(event)"></textarea>
+                <span id="alert"></span>
             </div>
             <div class="contact_method">
                 <button type="reset">Clear</button>
@@ -147,5 +148,6 @@
     </footer>
     <script src="./script/problem1.js" defer></script>
     <script src="./script/problem5/checkLogin.js" defer></script>
+    <script src="./script/problem4.js"></script>
 </body>
 </html>
