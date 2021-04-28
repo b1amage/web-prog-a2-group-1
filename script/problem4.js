@@ -120,8 +120,8 @@ function myFunction2(event){
 
 // Function to check validate message area
 function validMessage(){
-    var message = document.getElementById("msg").value.length;
-    if (50 <= message && message <= 500){
+    var len = document.getElementById("msg").value.length;
+    if (50 <= len && len <= 500){
         return true;
     } else {
         alert("Your message must be 50 to 500 letters long");
