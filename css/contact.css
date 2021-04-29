@@ -162,4 +162,7 @@ div.contact_form label.message{
         font-size: 30px;
         padding: 20px;
     }
+    #alert{
+        font-size: 10px;
+    }
 }
