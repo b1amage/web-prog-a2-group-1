@@ -3,7 +3,7 @@ function validateName(){
     let name = document.getElementById("full_name").value;
 
     // regex to check valid of name
-    let checkName = /([0-9_-~!@#$%^&*]*[a-zA-Z][0-9_-~!@#$%^&*]*){3,}/;
+    let checkName = /(([0-9_~!@#$%^&*-]*){1,}[a-zA-Z]([0-9_-~!@#$%^&*]*){1,}){3,}/;
 
     // use regex to check name
     if (checkName.test(name)){
