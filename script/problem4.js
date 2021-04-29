@@ -84,7 +84,7 @@ function validatePhone() {
 
 //Function to count how many words
 var mess = document.getElementById("alert");
-function myFunction(event){
+function keyboard_press_count(event){
     var current_len = document.getElementById("msg").value.length;
     var needed_len = 0;
     var y = event.keyCode;
@@ -106,7 +106,7 @@ function myFunction(event){
     }
 }
 
-function myFunction2(event){
+function backspace_count(event){
     var x = event.keyCode
     var current_len = document.getElementById("msg").value.length;
     var needed_len = 0;
@@ -137,7 +137,7 @@ function validMessage(){
     if (50 <= len && len <= 500){
         return true;
     } else {
-        alert("Your message must be 50 to 500 letters long");
+        alert("Your message must be 50 to 500 letters");
         return false;
     }
 }
