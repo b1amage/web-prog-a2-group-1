@@ -102,6 +102,16 @@ div.contact_form label.message{
 #msg{
     width: 100%
 }
+#alert{
+    font-size: 15px;
+}
+.a{
+    color: red;
+}
+.b{
+    color:rgb(25, 136, 25)
+}
+
 @media only screen and (max-width:1024px){
     .container{
         margin-bottom: 20px;

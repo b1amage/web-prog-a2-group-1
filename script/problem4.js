@@ -3,7 +3,7 @@ function validateName(){
     let name = document.getElementById("full_name").value;
 
     // regex to check valid of name
-    let checkName = /[a-zA-Z]{3,}/;
+    let checkName = /([0-9_-~!@#$%^&*]*[a-zA-Z][0-9_-~!@#$%^&*]*){3,}/;
 
     // use regex to check name
     if (checkName.test(name)){
@@ -87,14 +87,21 @@ var mess = document.getElementById("alert");
 function myFunction(event){
     var current_len = document.getElementById("msg").value.length;
     var needed_len = 0;
-    if (current_len < 50){
+    var y = event.keyCode;
+    if (current_len < 50){        
         needed_len = 50 - current_len;
+        mess.classList.remove("b");
+        mess.classList.add("a");
         mess.innerHTML = `You have ${needed_len} words left to reach 50 words`;
-    } else if (current_len <= 500){
+    } else if (current_len <= 500 && current_len >= 50){
         needed_len = 500 - current_len;
+        mess.classList.remove("a");
+        mess.classList.add("b");
         mess.innerHTML = `You have ${needed_len} words left to reach 500 words`;
     } else {
             needed_len = current_len - 500;
+            mess.classList.remove("b");
+            mess.classList.add("a");
             mess.innerHTML = `You have ${needed_len} over the limmit`
     }
 }
@@ -106,12 +113,18 @@ function myFunction2(event){
     if (x== 8){
         if (current_len < 50){
             needed_len = 50 - current_len;
+            mess.classList.remove("b");
+            mess.classList.add("a");
             mess.innerHTML = `You have ${needed_len} words left to reach 50 words`;
         }else if (current_len < 500){
             needed_len = 500 - current_len;
+            mess.classList.remove("a");
+            mess.classList.add("b");
             mess.innerHTML = `You have ${needed_len} words left to reach 500 words`;
         } else {
             needed_len = current_len - 500;
+            mess.classList.remove("b");
+            mess.classList.add("a");
             mess.innerHTML = `Delete ${needed_len} letters`;
         }
     }
@@ -132,5 +145,5 @@ function validMessage(){
 
 //Valdiate all fields
 function validateform(){
-    return validateEmail() && validatePhone() && validateName() && validMessage();
+    return validateName() && validateEmail() && validatePhone() && validMessage();
 }
