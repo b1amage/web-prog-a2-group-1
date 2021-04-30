@@ -96,30 +96,39 @@
                 <div id="info">
                     <div class="email">
                         <input id="email" required type="email" name="email" placeholder="Email">  
+                        <div class="invalid email"></div>
                     </div>
                     <div class="phone">
                         <input id="phone" required type="tel" name="phone" placeholder="Phone number">  
+                        <div class="invalid phone"></div>
                     </div>
                     <div class="password">
                         <input id="password" required type="password" name="password" required minlength="8" maxlength="20" placeholder="Your password">
+                        <div class="invalid password"></div>
                     </div>
                     <div class="re-password">
                         <input id="re-password" required type="password" name="re-password" required minlength="8" maxlength="20" placeholder="Re - enter your password">
+                        <div class="invalid re-password"></div>
                     </div>
                     <div class="first-name">
                         <input id="first-name" required name="first-name" placeholder="First name">
+                        <div class="invalid first-name"></div>
                     </div>
                     <div class="last-name">
                         <input id="last-name" required name="last-name" placeholder="Last name">
+                        <div class="invalid last-name"></div>
                     </div>
                     <div class="address">
                         <input id="address" required name="address" placeholder="Address">
+                        <div class="invalid address"></div>
                     </div>
                     <div class="city">
                         <input id="city" required name="city" placeholder="City">
+                        <div class="invalid city"></div>
                     </div>
                     <div class="zipcode">
                         <input id="zipcode" required name="zipcode" required minlength="4" maxlength="6" placeholder="Zipcode">
+                        <div class="invalid zipcode"></div>
                     </div>
                     <div class="profile-picture">
                         <label for="profile-picture">Select a profile picture:</label>
@@ -237,8 +246,9 @@
         </nav>
     </footer>
     <script src="./script/problem1.js" defer></script>
-    <script src="./script/problem5/checkLogin.js" defer></script>
-    <script src="./script/problem6.js" defer></script>
+    <script src="./script/checkLogin.js" defer></script>
+    <script src="./script/validateForm.js" defer></script>
+    <script src="./script/showHide.js" defer></script>
     </body>
 
     

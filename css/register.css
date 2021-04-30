@@ -177,6 +177,13 @@ input:not([type=radio], [type=submit], [type=reset], [type=file]):focus {
     box-shadow: 0 0 10px rgba(122, 121, 121, 0.849);
 }
 
+.invalid {
+    display: none;
+    color: red;
+    font-size: 15px;
+    float: right;
+}
+
 .center {
     text-align: center;
     margin: 5px 0;
