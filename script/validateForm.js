@@ -185,14 +185,14 @@ function validateFirstName() {
     let invalidFirstName = document.getElementsByClassName('invalid first-name')[0];
     if (firstName.length >= 3) {
         invalidFirstName.style.display = 'none';
-        showSuccess(qs("#first-name"));
-        qs("#first-name").addEventListener('input', validateFirstName);
+        showSuccess(qs("#first-name")); // Turn the valid input to green 
+        qs("#first-name").addEventListener('input', validateFirstName); // The input will turn red if users type the invalid one
         return true;
     } else {
         invalidFirstName.style.display = 'block';
         invalidFirstName.innerHTML = "First name must have at least 3 characters";
-        showError(qs("#first-name"));
-        qs("#first-name").addEventListener('input', validateFirstName);
+        showError(qs("#first-name")); // Turn the invalid input to red
+        qs("#first-name").addEventListener('input', validateFirstName); // The input will turn green if users fixed the errors
         return false;
     }
 }
@@ -202,14 +202,14 @@ function validateLastName() {
     let invalidLastName = document.getElementsByClassName('invalid last-name')[0];
     if (lastName.length >= 3) {
         invalidLastName.style.display = 'none';
-        showSuccess(qs("#last-name"));
-        qs("#last-name").addEventListener('input', validateLastName);
+        showSuccess(qs("#last-name")); // Turn the valid input to green 
+        qs("#last-name").addEventListener('input', validateLastName); // The input will turn red if users type the invalid one
         return true;
     } else {
         invalidLastName.style.display = 'block';
         invalidLastName.innerHTML = "Last name must have at least 3 characters";
-        showError(qs("#last-name"));
-        qs("#last-name").addEventListener('input', validateLastName);
+        showError(qs("#last-name")); // Turn the invalid input to red
+        qs("#last-name").addEventListener('input', validateLastName); // The input will turn green if users fixed the errors
         return false;
     }
 }
@@ -219,14 +219,14 @@ function validateAddress() {
     let invalidAddress = document.getElementsByClassName('invalid address')[0];
     if (address.length >= 3) {
         invalidAddress.style.display = 'none';
-        showSuccess(qs("#address"));
-        qs("#address").addEventListener('input', validateAddress);
+        showSuccess(qs("#address")); // Turn the valid input to green 
+        qs("#address").addEventListener('input', validateAddress); // The input will turn red if users type the invalid one
         return true;
     } else {
         invalidAddress.style.display = 'block';
         invalidAddress.innerHTML = "Address must have at least 3 characters";
-        showError(qs("#address"));
-        qs("#address").addEventListener('input', validateAddress);
+        showError(qs("#address")); // Turn the invalid input to red
+        qs("#address").addEventListener('input', validateAddress); // The input will turn green if users fixed the errors
         return false;
     }
 }
@@ -236,14 +236,14 @@ function validateCity() {
     let invalidCity = document.getElementsByClassName('invalid city')[0];
     if (city.length >= 3) {
         invalidCity.style.display = 'none';
-        showSuccess(qs("#city"));
-        qs("#city").addEventListener('input', validateCity);
+        showSuccess(qs("#city")); // Turn the valid input to green 
+        qs("#city").addEventListener('input', validateCity); // The input will turn red if users type the invalid one
         return true;
     } else {
         invalidCity.style.display = 'block';
         invalidCity.innerHTML = "City name must have at least 3 characters";
-        showError(qs("#city"));
-        qs("#city").addEventListener('input', validateCity);
+        showError(qs("#city")); // Turn the invalid input to red
+        qs("#city").addEventListener('input', validateCity); // The input will turn green if users fixed the errors
         return false;
     }
 }
