@@ -163,19 +163,20 @@ function validateRePassword() {
     }
 }
 
+
 // function checkPersonalInfo(inputField, errorMessage) {
 //     let input = qs("#" + inputField).value;
 //     let invalidInput = document.getElementsByClassName("invalid " + inputField)[0];
 //     if (input.length >= 3) {
 //         invalidInput.style.display = 'none';
 //         showSuccess(qs("#" + inputField));
-//         qs("#" + inputField).addEventListener('input', checkPersonalInfo(inputField, errorMessage));
+//         // qs("#" + inputField).addEventListener('input', checkPersonalInfo(inputField, errorMessage));
 //         return true;
 //     } else {
 //         invalidInput.style.display = 'block';
 //         invalidInput.innerHTML = errorMessage;
 //         showError(qs("#" + inputField));
-//         qs("#" + inputField).addEventListener('input', checkPersonalInfo(inputField, errorMessage));
+//         // qs("#" + inputField).addEventListener('input', checkPersonalInfo(inputField, errorMessage));
 //         return false;
 //     }
 // }
