@@ -1,5 +1,5 @@
-# web_programming_asm_1
-Assignment 1 of web programming course 
+# web_programming_asm_2
+Assignment 2 of web programming course 
 
 # Description
 This is the Retailez mall in which sell a myriad of product from different brands. It is just like Van Hanh Mall or Crescent Mall
@@ -8,7 +8,7 @@ This is the Retailez mall in which sell a myriad of product from different brand
 https://retailez.netlify.app/
 
 # Github
-https://github.com/s3877698/web_programming_asm_1
+https://github.com/s3877698/web_programming_asm2_group_1
 
 ## Group Members
 
@@ -23,48 +23,16 @@ Nguyen Trong Minh Long - s3878694
 ## Contributions:
 
 Nguyen Anh Duy (25%):
-- Write README.md
-- Dividing tasks to all the members
-- Find the fonts and color palete code
-- HTML pages:
-  - about.html
-  - copyright.html
-  - tos.html
-  - privacy.html
-  - store-browse and product-browse pages (categories, name, created time)
-- Link all the html files to index.html
+
 
 Nguyen Luu Quoc Bao (25%):
-- Header and Footer
-- HTML pages:
-  - index.html
-  - product-detail.html
-  - order-placement.html
-  - thanks.html
-  - store-sample.html (a template for other stores)
-- Customize css file samples to support teammates (index, store-home, store-browse)
-- Support teammates with some responsive elements, fixing bugs and add animations
-- Finalize the HTML and CSS files
+
 
 Dao Kha Tuan (25%): 
-- HTML pages:
-  - user-information.html
-  - login-box.html
-  - forgot-password.html
-  - register.html
-- Support teammates with some responsive elements and fixing bugs
-- Test the website on different platforms
+
  
 Nguyen Trong Minh Long (25%):
-- HTML pages:
-  - faqs.html
-  - contact.html
-  - store and product pages:
-    - Nike
-    - Don Chicken
-    - The Gioi Di Dong
- - Support teammates on design the website
- - Test the website and identify the bugs
+
 
 ## Responsive Devices-Configuration
 We have responsive on almost device. 
