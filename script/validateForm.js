@@ -1,38 +1,56 @@
+// A function to select an element
+function qs(element) {
+    return document.querySelector(element);
+}
+
+// A function to turn the color of invalid input to red
+function showError(element) {
+    element.classList.remove("success");
+    element.classList.add("error");
+}
+
+// A function to turn the color of valid input to green
+function showSuccess(element) {
+    element.classList.remove("error");
+    element.classList.add("success");
+}
+
 // A function to validate email
 function validateEmail() {
-    let email = document.getElementById("email").value;
+    let email = qs("#email").value;
     var invalidEmail = document.getElementsByClassName('invalid email')[0];
 
     // The regex to check the valid form of email
     let checkEmail = /^(?=[^\.])[a-zA-Z0-9.]{2,}[a-zA-Z0-9]+[@](?=[^\.])[a-zA-Z0-9.]+[.][a-zA-Z]{2,5}$/;
 
     // Check if email has double dots 
-    let doubleDots = false;
     if (email.includes("..")) {
         invalidEmail.style.display = 'block';
-        invalidEmail.innerHTML = "There must be no double dots in email";
-        doubleDots = true;
+        invalidEmail.innerHTML = "No double dots in email"; // Show the message for users to fix the invalid input
+        showError(qs("#email")); // Turn the invalid input to red
         return false;
-    } 
-
-    if (!doubleDots) {
+    } else {
         invalidEmail.style.display = 'none';
-    }
+    };
 
     // Use the regex above to check the valid form of the email
     if (checkEmail.test(email)) {
         invalidEmail.style.display = 'none';
+        showSuccess(qs("#email")); // Turn the valid input to green
+        qs("#email").addEventListener('input', validateEmail); // The input will turn red if users type the invalid one
         return true;
     } else {
         invalidEmail.style.display = 'block';
         invalidEmail.innerHTML = "Invalid email format";
+        showError(qs("#email")); // Turn the invalid input to red
+        qs("#email").addEventListener('input', validateEmail); // The input will turn green if users fixed the errors
         return false;
     }
 }
 
 // A function to validate phone number
 function validatePhone() {
-    let phone = document.getElementById("phone").value;
+    let phone = qs("#phone").value;
     var invalidPhone = document.getElementsByClassName('invalid phone')[0];
 
     // The regex to check the valid form of phone number 
@@ -40,19 +58,21 @@ function validatePhone() {
 
     // Check if phone number has double dots, spaces or dashes
     let symbols = " .-";
-    let symbolsDouble = false;
+    let symbolsDouble = false; // A variable to check if phone input has double dots, spaces or dashes
     for (let i = 0; i <= phone.length - 2; i++) {
         if(symbols.indexOf(phone[i]) !== -1 && symbols.indexOf(phone[i + 1]) !== -1) {
             invalidPhone.style.display = 'block';
-            invalidPhone.innerHTML = "No double dots, spaces or dashes in phone";
+            invalidPhone.innerHTML = "No double dots, spaces or dashes in phone"; // Show the message for users to fix the invalid input
+            showError(qs("#phone")); // Turn the invalid input to red
             symbolsDouble = true;
+            qs("#phone").addEventListener('input', validatePhone); // The input will turn green if users fixed the errors
             return false;
         } 
-    }
+    };
 
     if (!symbolsDouble) {
         invalidPhone.style.display = 'none';
-    }
+    };
 
     // Count how many digits in phone number
     let numberOfDigits = 0;
@@ -60,141 +80,177 @@ function validatePhone() {
         if (Number.isInteger(parseInt(phone[i]))) {
             numberOfDigits++;
         }
-    }
+    };
 
     // Check if the number of digits is from 9 to 11 characters
-    let checkNumberOfDigits = true;
     if (numberOfDigits < 9 || numberOfDigits > 11) {
         invalidPhone.style.display = 'block';
-        invalidPhone.innerHTML = "Phone number must have from 9 to 11 digits";
-        checkNumberOfDigits = false;
+        invalidPhone.innerHTML = "Phone number must have from 9 to 11 digits"; // Show the message for users to fix the invalid input
+        showError(qs("#phone")); // Turn the invalid input to red
+        qs("#phone").addEventListener('input', validatePhone); // The input will turn green if users fixed the errors
         return false;
-    } 
-
-    if (checkNumberOfDigits) {
+    } else {
         invalidPhone.style.display = 'none';
-    }
+    };
 
     // Use the regex above to test the valid form of phone number
     if (checkPhone.test(phone)) {
         invalidPhone.style.display = 'none';
+        showSuccess(qs("#phone")); // Turn the invalid input to green
+        qs("#phone").addEventListener('input', validatePhone); // The input will turn red if users type the invalid one
         return true;
     } else {
         invalidPhone.style.display = 'block';
         invalidPhone.innerHTML = "Invalid phone";
-        return false;
+        showError(qs("#phone")); // Turn the valid input to red
+        qs("#phone").addEventListener('input', validatePhone); // The input will turn green if users fixed the errors
+        return false; 
     }
 }
 
 // A function to validate password
 function validatePassword() {
-    let password = document.getElementById("password").value;
+    let password = qs("#password").value;
     var invalidPassword = document.getElementsByClassName('invalid password')[0];
 
     // The regex to check the valid form of password
     let checkPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,20}$/;
 
     // Check if password has space in it
-    let hasSpace = false;
     if (password.includes(" ")) {
         invalidPassword.style.display = 'block';
-        invalidPassword.innerHTML = "There must be no space in password";
-        hasSpace = true;
+        invalidPassword.innerHTML = "There must be no space in password"; // Show the message for users to fix the invalid input
+        showError(qs("#password")); // Turn the invalid input to red
+        qs("#password").addEventListener('input', validatePassword); // The input will turn green if users fixed the errors
         return false;
-    }
-
-    if (!hasSpace) {
+    } else {
         invalidPassword.style.display = 'none';
-    }
+    };
 
     // Use the regex above to check the valid form of password
     if (checkPassword.test(password)) {
         invalidPassword.style.display = 'none';
+        showSuccess(qs("#password")); // Turn the valid input to green
+        qs("#password").addEventListener('input', validatePassword); // The input will turn red if users type the invalid one
         return true;
     } else {
         invalidPassword.style.display = 'block';
         invalidPassword.innerHTML = "Invalid password";
+        showError(qs("#password")); // Turn the invalid input to red
+        qs("#password").addEventListener('input', validatePassword); // The input will turn green if users fixed the errors
         return false;
     }
 }
 
 // A function to validate retype password
 function validateRePassword() {
-    let retypePassword = document.getElementById("re-password").value;
-    let password = document.getElementById("password").value;
+    let retypePassword = qs("#re-password").value;
+    let password = qs("#password").value;
     var invalidRePassword = document.getElementsByClassName('invalid re-password')[0];
 
     // Check if the retype password is similar to the original password
     if (retypePassword === password) {
         invalidRePassword.style.display = 'none';
+        showSuccess(qs("#re-password")); // Turn the valid input to green
+        qs("#re-password").addEventListener('input', validateRePassword); // The input will turn red if users type the invalid one
         return true;
     } else {
         invalidRePassword.style.display = 'block';
         invalidRePassword.innerHTML = "You must retype the same password";
+        showError(qs("#re-password")); // Turn the invalid input to red
+        qs("#re-password").addEventListener('input', validateRePassword); // The input will turn green if users fix the errors
         return false;
     }
 }
 
-// A function to validate first name, last name, address and city
-// function validatePersonalInfo() {
-//     let firstName = document.getElementById("first-name").value;
-//     let lastName = document.getElementById("last-name").value;
-//     let address = document.getElementById("address").value;
-//     let city = document.getElementById("city").value;
-//     var invalidFirstName = document.getElementsByClassName('invalid first-name')[0];
-//     var invalidLastName = document.getElementsByClassName('invalid last-name')[0];
-//     var invalidAddress = document.getElementsByClassName('invalid address')[0];
-//     var invalidCity = document.getElementsByClassName('invalid city')[0];
-
-//     // Check if first name, last name, address and city contain at least 3 characters/each
-//     if (firstName.length >= 3 && lastName.length >= 3 && address.length >= 3 && city.length >= 3) {
-//         invalidFirstName.style.display = 'none';
-//         invalidLastName.style.display = 'none';
-//         invalidAddress.style.display = 'none';
-//         invalidCity.style.display = 'none';
+// function checkPersonalInfo(inputField, errorMessage) {
+//     let input = qs("#" + inputField).value;
+//     let invalidInput = document.getElementsByClassName("invalid " + inputField)[0];
+//     if (input.length >= 3) {
+//         invalidInput.style.display = 'none';
+//         showSuccess(qs("#" + inputField));
+//         qs("#" + inputField).addEventListener('input', checkPersonalInfo(inputField, errorMessage));
 //         return true;
-//     } else if (firstName.length < 3) {
-//         invalidFirstName.style.display = 'block';
-//         invalidFirstName.innerHTML = "First name must have at least 3 characters";
-//         return false;
-//     } else if (lastName.length < 3) {
-//         invalidLastName.style.display = 'block';
-//         invalidLastName.innerHTML = "Last name must have at least 3 characters";
-//         return false;
-//     } else if (address.length < 3) {
-//         invalidAddress.style.display = 'block';
-//         invalidAddress.innerHTML = "Address must have at least 3 characters";
-//         return false;
-//     } else if (city.length < 3) {
-//         invalidCity.style.display = 'block';
-//         invalidCity.innerHTML = "City name must have at least 3 characters";
+//     } else {
+//         invalidInput.style.display = 'block';
+//         invalidInput.innerHTML = errorMessage;
+//         showError(qs("#" + inputField));
+//         qs("#" + inputField).addEventListener('input', checkPersonalInfo(inputField, errorMessage));
 //         return false;
 //     }
 // }
 
-function checkPersonalInfo(inputField, errorMessage) {
-    let input = document.getElementById(inputField).value;
-    let invalidInput = document.getElementsByClassName(`invalid ${inputField}`)[0];
-    if (input.length >= 3) {
-        invalidInput.style.display = 'none';
+function validateFirstName() {
+    let firstName = qs("#first-name").value;
+    let invalidFirstName = document.getElementsByClassName('invalid first-name')[0];
+    if (firstName.length >= 3) {
+        invalidFirstName.style.display = 'none';
+        showSuccess(qs("#first-name"));
+        qs("#first-name").addEventListener('input', validateFirstName);
         return true;
     } else {
-        invalidInput.style.display = 'block';
-        invalidInput.innerHTML = errorMessage;
+        invalidFirstName.style.display = 'block';
+        invalidFirstName.innerHTML = "First name must have at least 3 characters";
+        showError(qs("#first-name"));
+        qs("#first-name").addEventListener('input', validateFirstName);
         return false;
     }
 }
 
-function validatePersonalInfo() {
-    return checkPersonalInfo('first-name', "First name must have at least 3 characters")
-    && checkPersonalInfo('last-name', "Last name must have at least 3 characters") 
-    && checkPersonalInfo('address', "Address must have at least 3 characters") 
-    && checkPersonalInfo('city', "City must have at least 3 characters");
+function validateLastName() {
+    let lastName = qs("#last-name").value;
+    let invalidLastName = document.getElementsByClassName('invalid last-name')[0];
+    if (lastName.length >= 3) {
+        invalidLastName.style.display = 'none';
+        showSuccess(qs("#last-name"));
+        qs("#last-name").addEventListener('input', validateLastName);
+        return true;
+    } else {
+        invalidLastName.style.display = 'block';
+        invalidLastName.innerHTML = "Last name must have at least 3 characters";
+        showError(qs("#last-name"));
+        qs("#last-name").addEventListener('input', validateLastName);
+        return false;
+    }
+}
+
+function validateAddress() {
+    let address = qs("#address").value;
+    let invalidAddress = document.getElementsByClassName('invalid address')[0];
+    if (address.length >= 3) {
+        invalidAddress.style.display = 'none';
+        showSuccess(qs("#address"));
+        qs("#address").addEventListener('input', validateAddress);
+        return true;
+    } else {
+        invalidAddress.style.display = 'block';
+        invalidAddress.innerHTML = "Address must have at least 3 characters";
+        showError(qs("#address"));
+        qs("#address").addEventListener('input', validateAddress);
+        return false;
+    }
+}
+
+function validateCity() {
+    let city = qs("#city").value;
+    let invalidCity = document.getElementsByClassName('invalid city')[0];
+    if (city.length >= 3) {
+        invalidCity.style.display = 'none';
+        showSuccess(qs("#city"));
+        qs("#city").addEventListener('input', validateCity);
+        return true;
+    } else {
+        invalidCity.style.display = 'block';
+        invalidCity.innerHTML = "City name must have at least 3 characters";
+        showError(qs("#city"));
+        qs("#city").addEventListener('input', validateCity);
+        return false;
+    }
 }
 
 // A function to validate zipcode
 function validateZipcode() {
-    let zipcode = document.getElementById("zipcode").value;
+    let zipcode = qs("#zipcode").value;
     var invalidZipcode = document.getElementsByClassName('invalid zipcode')[0];
 
     // The regex to check the valid form of zipcode
@@ -203,16 +259,32 @@ function validateZipcode() {
     // Use the regex above to check the valid form of zipcode
     if (checkZipcode.test(zipcode)) {
         invalidZipcode.style.display = 'none';
+        showSuccess(qs("#zipcode")); // Turn the valid input to green
+        qs("#zipcode").addEventListener('input', validateZipcode); // The valid input will turn red if users type the invalid one
         return true;
     } else {
         invalidZipcode.style.display = 'block';
         invalidZipcode.innerHTML = "Invalid zipcode";
+        showError(qs("#zipcode")); // Turn the invalid input to red
+        qs("#zipcode").addEventListener('input', validateZipcode); // The invalid input will turn green if users fixed the errors
         return false;
     }
 }
 
 // A function to validate all of the input fields when the form is submitted
-function validateForm() {
-    return validateEmail() && validatePhone() && validatePassword() && validateRePassword() && validatePersonalInfo() && validateZipcode();
+function validateForm(event) {
+    if(!validateEmail() || !validatePhone() || !validatePassword() || !validateRePassword() || !validateFirstName() || !validateLastName() || !validateAddress() || !validateCity() || !validateZipcode()) {
+        event.preventDefault(); // If there is invalid input, prevent the form from being submitted by cancelling the event
+    } else {
+        return true; // Submit the form when all inputs are valid
+    }
+    // if (!validateEmail() || !validatePhone() || !validatePassword() || !validateRePassword() || !checkPersonalInfo("first-name", "First name must have at least 3 characters") || !checkPersonalInfo("last-name", "Last name must have at least 3 characters") || !checkPersonalInfo("address", "Address must have at least 3 characters") || !checkPersonalInfo("city", "City name must have at least 3 characters") || !validateZipcode()) {
+    //     event.preventDefault();
+    // } else {
+    //     return true;
+    // };
+    
 }
 
+// Invoke the validateForm() function when submit the form
+qs("form").addEventListener("submit", validateForm);
