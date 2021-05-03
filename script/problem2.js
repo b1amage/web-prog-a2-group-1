@@ -3,7 +3,7 @@ var stop = 'false';
 var duplicate = 'true';
 var container = document.getElementById("scroll");
 var stores = document.getElementsByClassName("store");
-var horMargin = 30;
+var horMargin = 50;
 
 // Duplicate the length of the container
 function setup() {
@@ -30,7 +30,6 @@ function startScroll() {
         let clone = stores[stores.length-1].cloneNode(true);
         container.removeChild(stores[stores.length-1]);
         container.prepend(clone);
-        console.log(container.scrollLeft);
         container.scrollLeft = width + horMargin * 2;
     }
 
