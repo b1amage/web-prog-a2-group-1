@@ -25,10 +25,22 @@ function showHide() {
 // A function to hide the additional fields when the users reset the form
 function clear() {
     let additional = document.getElementById("additional");
-
+    let errorMessages = document.getElementsByClassName("invalid");
+    let inputFields = document.getElementsByTagName("input");
     // Remove class "visible" and add class "hidden" to hide additonal fields
     additional.classList.remove("visible");
     additional.classList.add("hidden");
+
+    // Remove all error messages
+    for (let i = 0; i < errorMessages.length; i++) {
+        errorMessages[i].innerHTML = "";
+    }
+
+    // Remove all the validation status of input fields
+    for (let j = 0; j < inputFields.length; j++) {
+        inputFields[j].classList.remove("error");
+        inputFields[j].classList.remove("success");
+    }
 }
 
 // Invoke the showHide() function when Store owner or Shopper account type is chosen
