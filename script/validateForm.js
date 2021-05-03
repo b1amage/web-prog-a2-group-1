@@ -37,13 +37,11 @@ function validateEmail() {
     if (checkEmail.test(email)) {
         invalidEmail.style.display = 'none';
         showSuccess(qs("#email")); // Turn the valid input to green
-        qs("#email").addEventListener('input', validateEmail); // The input will turn red if users type the invalid one
         return true;
     } else {
         invalidEmail.style.display = 'block';
         invalidEmail.innerHTML = "Invalid email format";
         showError(qs("#email")); // Turn the invalid input to red
-        qs("#email").addEventListener('input', validateEmail); // The input will turn green if users fixed the errors
         return false;
     }
 }
@@ -65,7 +63,6 @@ function validatePhone() {
             invalidPhone.innerHTML = "No double dots, spaces or dashes in phone"; // Show the message for users to fix the invalid input
             showError(qs("#phone")); // Turn the invalid input to red
             symbolsDouble = true;
-            qs("#phone").addEventListener('input', validatePhone); // The input will turn green if users fixed the errors
             return false;
         } 
     };
@@ -87,7 +84,6 @@ function validatePhone() {
         invalidPhone.style.display = 'block';
         invalidPhone.innerHTML = "Phone number must have from 9 to 11 digits"; // Show the message for users to fix the invalid input
         showError(qs("#phone")); // Turn the invalid input to red
-        qs("#phone").addEventListener('input', validatePhone); // The input will turn green if users fixed the errors
         return false;
     } else {
         invalidPhone.style.display = 'none';
@@ -97,13 +93,11 @@ function validatePhone() {
     if (checkPhone.test(phone)) {
         invalidPhone.style.display = 'none';
         showSuccess(qs("#phone")); // Turn the invalid input to green
-        qs("#phone").addEventListener('input', validatePhone); // The input will turn red if users type the invalid one
         return true;
     } else {
         invalidPhone.style.display = 'block';
         invalidPhone.innerHTML = "Invalid phone";
         showError(qs("#phone")); // Turn the valid input to red
-        qs("#phone").addEventListener('input', validatePhone); // The input will turn green if users fixed the errors
         return false; 
     }
 }
@@ -121,7 +115,6 @@ function validatePassword() {
         invalidPassword.style.display = 'block';
         invalidPassword.innerHTML = "There must be no space in password"; // Show the message for users to fix the invalid input
         showError(qs("#password")); // Turn the invalid input to red
-        qs("#password").addEventListener('input', validatePassword); // The input will turn green if users fixed the errors
         return false;
     } else {
         invalidPassword.style.display = 'none';
@@ -131,13 +124,11 @@ function validatePassword() {
     if (checkPassword.test(password)) {
         invalidPassword.style.display = 'none';
         showSuccess(qs("#password")); // Turn the valid input to green
-        qs("#password").addEventListener('input', validatePassword); // The input will turn red if users type the invalid one
         return true;
     } else {
         invalidPassword.style.display = 'block';
         invalidPassword.innerHTML = "Invalid password";
         showError(qs("#password")); // Turn the invalid input to red
-        qs("#password").addEventListener('input', validatePassword); // The input will turn green if users fixed the errors
         return false;
     }
 }
@@ -152,34 +143,14 @@ function validateRePassword() {
     if (retypePassword === password) {
         invalidRePassword.style.display = 'none';
         showSuccess(qs("#re-password")); // Turn the valid input to green
-        qs("#re-password").addEventListener('input', validateRePassword); // The input will turn red if users type the invalid one
         return true;
     } else {
         invalidRePassword.style.display = 'block';
         invalidRePassword.innerHTML = "You must retype the same password";
         showError(qs("#re-password")); // Turn the invalid input to red
-        qs("#re-password").addEventListener('input', validateRePassword); // The input will turn green if users fix the errors
         return false;
     }
 }
-
-
-// function checkPersonalInfo(inputField, errorMessage) {
-//     let input = qs("#" + inputField).value;
-//     let invalidInput = document.getElementsByClassName("invalid " + inputField)[0];
-//     if (input.length >= 3) {
-//         invalidInput.style.display = 'none';
-//         showSuccess(qs("#" + inputField));
-//         // qs("#" + inputField).addEventListener('input', checkPersonalInfo(inputField, errorMessage));
-//         return true;
-//     } else {
-//         invalidInput.style.display = 'block';
-//         invalidInput.innerHTML = errorMessage;
-//         showError(qs("#" + inputField));
-//         // qs("#" + inputField).addEventListener('input', checkPersonalInfo(inputField, errorMessage));
-//         return false;
-//     }
-// }
 
 function validateFirstName() {
     let firstName = qs("#first-name").value;
@@ -187,13 +158,11 @@ function validateFirstName() {
     if (firstName.length >= 3) {
         invalidFirstName.style.display = 'none';
         showSuccess(qs("#first-name")); // Turn the valid input to green 
-        qs("#first-name").addEventListener('input', validateFirstName); // The input will turn red if users type the invalid one
         return true;
     } else {
         invalidFirstName.style.display = 'block';
         invalidFirstName.innerHTML = "First name must have at least 3 characters";
         showError(qs("#first-name")); // Turn the invalid input to red
-        qs("#first-name").addEventListener('input', validateFirstName); // The input will turn green if users fixed the errors
         return false;
     }
 }
@@ -204,13 +173,11 @@ function validateLastName() {
     if (lastName.length >= 3) {
         invalidLastName.style.display = 'none';
         showSuccess(qs("#last-name")); // Turn the valid input to green 
-        qs("#last-name").addEventListener('input', validateLastName); // The input will turn red if users type the invalid one
         return true;
     } else {
         invalidLastName.style.display = 'block';
         invalidLastName.innerHTML = "Last name must have at least 3 characters";
         showError(qs("#last-name")); // Turn the invalid input to red
-        qs("#last-name").addEventListener('input', validateLastName); // The input will turn green if users fixed the errors
         return false;
     }
 }
@@ -221,13 +188,11 @@ function validateAddress() {
     if (address.length >= 3) {
         invalidAddress.style.display = 'none';
         showSuccess(qs("#address")); // Turn the valid input to green 
-        qs("#address").addEventListener('input', validateAddress); // The input will turn red if users type the invalid one
         return true;
     } else {
         invalidAddress.style.display = 'block';
         invalidAddress.innerHTML = "Address must have at least 3 characters";
         showError(qs("#address")); // Turn the invalid input to red
-        qs("#address").addEventListener('input', validateAddress); // The input will turn green if users fixed the errors
         return false;
     }
 }
@@ -238,13 +203,11 @@ function validateCity() {
     if (city.length >= 3) {
         invalidCity.style.display = 'none';
         showSuccess(qs("#city")); // Turn the valid input to green 
-        qs("#city").addEventListener('input', validateCity); // The input will turn red if users type the invalid one
         return true;
     } else {
         invalidCity.style.display = 'block';
         invalidCity.innerHTML = "City name must have at least 3 characters";
         showError(qs("#city")); // Turn the invalid input to red
-        qs("#city").addEventListener('input', validateCity); // The input will turn green if users fixed the errors
         return false;
     }
 }
@@ -261,13 +224,11 @@ function validateZipcode() {
     if (checkZipcode.test(zipcode)) {
         invalidZipcode.style.display = 'none';
         showSuccess(qs("#zipcode")); // Turn the valid input to green
-        qs("#zipcode").addEventListener('input', validateZipcode); // The valid input will turn red if users type the invalid one
         return true;
     } else {
         invalidZipcode.style.display = 'block';
         invalidZipcode.innerHTML = "Invalid zipcode";
         showError(qs("#zipcode")); // Turn the invalid input to red
-        qs("#zipcode").addEventListener('input', validateZipcode); // The invalid input will turn green if users fixed the errors
         return false;
     }
 }
@@ -279,13 +240,18 @@ function validateForm(event) {
     } else {
         return true; // Submit the form when all inputs are valid
     }
-    // if (!validateEmail() || !validatePhone() || !validatePassword() || !validateRePassword() || !checkPersonalInfo("first-name", "First name must have at least 3 characters") || !checkPersonalInfo("last-name", "Last name must have at least 3 characters") || !checkPersonalInfo("address", "Address must have at least 3 characters") || !checkPersonalInfo("city", "City name must have at least 3 characters") || !validateZipcode()) {
-    //     event.preventDefault();
-    // } else {
-    //     return true;
-    // };
-    
 }
+
+// Inform the users whether the inputs are valid or not while they are typing
+qs("#email").addEventListener('input', validateEmail); 
+qs("#phone").addEventListener('input', validatePhone); 
+qs("#password").addEventListener('input', validatePassword); 
+qs("#re-password").addEventListener('input', validateRePassword); 
+qs("#first-name").addEventListener('input', validateFirstName); 
+qs("#last-name").addEventListener('input', validateLastName); 
+qs("#address").addEventListener('input', validateAddress); 
+qs("#city").addEventListener('input', validateCity); 
+qs("#zipcode").addEventListener('input', validateZipcode); 
 
 // Invoke the validateForm() function when submit the form
 qs("form").addEventListener("submit", validateForm);
