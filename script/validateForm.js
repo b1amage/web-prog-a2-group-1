@@ -92,12 +92,12 @@ function validatePhone() {
     // Use the regex above to test the valid form of phone number
     if (checkPhone.test(phone)) {
         invalidPhone.style.display = 'none';
-        showSuccess(qs("#phone")); // Turn the invalid input to green
+        showSuccess(qs("#phone")); // Turn the valid input to green
         return true;
     } else {
         invalidPhone.style.display = 'block';
         invalidPhone.innerHTML = "Invalid phone";
-        showError(qs("#phone")); // Turn the valid input to red
+        showError(qs("#phone")); // Turn the invalid input to red
         return false; 
     }
 }
@@ -152,64 +152,44 @@ function validateRePassword() {
     }
 }
 
+// A function to vailidate personal information
+function checkPersonalInfo(inputField, errorMessage) {
+    // inputField: the name of the input field element
+    // errorMessage: an error message to display to users when the input is invalid
+    let input = qs("#" + inputField).value;
+    let invalidInput = document.getElementsByClassName("invalid " + inputField)[0];
+
+    // Check if the input field has more than 3 characters
+    if (input.length >= 3) {
+        invalidInput.style.display = 'none';
+        showSuccess(qs("#" + inputField)); // Turn the valid input to green
+        return true;
+    } else {
+        invalidInput.style.display = 'block';
+        invalidInput.innerHTML = errorMessage; // Show the message for users to fix the invalid input
+        showError(qs("#" + inputField)); // Turn the invalid input to red
+        return false;
+    }
+}
+
+// A function to validate first name
 function validateFirstName() {
-    let firstName = qs("#first-name").value;
-    let invalidFirstName = document.getElementsByClassName('invalid first-name')[0];
-    if (firstName.length >= 3) {
-        invalidFirstName.style.display = 'none';
-        showSuccess(qs("#first-name")); // Turn the valid input to green 
-        return true;
-    } else {
-        invalidFirstName.style.display = 'block';
-        invalidFirstName.innerHTML = "First name must have at least 3 characters";
-        showError(qs("#first-name")); // Turn the invalid input to red
-        return false;
-    }
+    return checkPersonalInfo("first-name", "First name must have at least 3 characters");
 }
 
+// A function to validate last name
 function validateLastName() {
-    let lastName = qs("#last-name").value;
-    let invalidLastName = document.getElementsByClassName('invalid last-name')[0];
-    if (lastName.length >= 3) {
-        invalidLastName.style.display = 'none';
-        showSuccess(qs("#last-name")); // Turn the valid input to green 
-        return true;
-    } else {
-        invalidLastName.style.display = 'block';
-        invalidLastName.innerHTML = "Last name must have at least 3 characters";
-        showError(qs("#last-name")); // Turn the invalid input to red
-        return false;
-    }
+    return checkPersonalInfo("last-name", "Last name must have at least 3 characters");
 }
 
+// A function to validate address
 function validateAddress() {
-    let address = qs("#address").value;
-    let invalidAddress = document.getElementsByClassName('invalid address')[0];
-    if (address.length >= 3) {
-        invalidAddress.style.display = 'none';
-        showSuccess(qs("#address")); // Turn the valid input to green 
-        return true;
-    } else {
-        invalidAddress.style.display = 'block';
-        invalidAddress.innerHTML = "Address must have at least 3 characters";
-        showError(qs("#address")); // Turn the invalid input to red
-        return false;
-    }
+    return checkPersonalInfo("address", "Address must have at least 3 characters");
 }
 
+// A function to validate city name
 function validateCity() {
-    let city = qs("#city").value;
-    let invalidCity = document.getElementsByClassName('invalid city')[0];
-    if (city.length >= 3) {
-        invalidCity.style.display = 'none';
-        showSuccess(qs("#city")); // Turn the valid input to green 
-        return true;
-    } else {
-        invalidCity.style.display = 'block';
-        invalidCity.innerHTML = "City name must have at least 3 characters";
-        showError(qs("#city")); // Turn the invalid input to red
-        return false;
-    }
+    return checkPersonalInfo("city", "City name must have at least 3 characters");
 }
 
 // A function to validate zipcode
