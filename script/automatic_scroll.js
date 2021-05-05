@@ -121,4 +121,9 @@ function autoScroll(containerName, item) {
 
 autoScroll("store-container", "store");
 autoScroll("product-container", "product");
+<<<<<<< HEAD
 autoScroll("feature-container", "feature");
+=======
+autoScroll("feature-container", "feature");
+autoScroll("feature-container last", "feature");
+>>>>>>> 97bcc3935128e7bd8f8501f21fe740a923a3c604

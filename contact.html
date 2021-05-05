@@ -88,7 +88,7 @@
     <main>
         <h1 class="title">Contact form</h1>
         <div class="container">
-            <form method="get" action="#" enctype="text/plain" onsubmit="return validateform()">
+            <form method="get" action="#" enctype="text/plain">
             <div clas="contact_form">
                 <label class="purpose" for="cont_pur">Your purpose of contact</label>
                 <select id="cont_pur">
@@ -98,18 +98,23 @@
                 </select>
             </div>
             <div class="contact_form">
-                <p>Please enter your full name:<br><input id="full_name" type="text" maxlength="60" name="full name" placeholder="Your full name"></p>
+                <p>Please enter your full name:<br><input id="full_name" required type="text" required minlength="3" maxlength="60" name="full name" placeholder="Your full name"></p>
+                <span id="name_alert"></span>
             </div>
             <div class="contact_form">
-                <p>Enter your email address:<br><input id="email" type="email" name="email" placeholder="avcd123@email.com"></p>
+                <p>Enter your email address:<br><input id="email" required type="email" name="email" placeholder="avcd123@email.com"></p>
+                <span id="email_alert"></span>
             </div>
             <div class="contact_form">
-                <p>Enter your phone number:<br><input id="phone" type="tel" name="phone number" placeholder="091 989 5451"></p>
+                <p>Enter your phone number:<br><input id="phone" required type="tel" name="phone number" placeholder="091 989 5451"></p>
+                <span id="phone_alert"></span>
             </div>
             <div class="contact_form">
                 <p>Method of contact</p>
                 <input type="radio" name="contact_method" id="email_method"><label for="email_method">By email</label>
-                <input type="radio" name="contact_method" id="phone_method"><label for="phone_method">By phone</label>   
+                <input type="radio" name="contact_method" id="phone_method"><label for="phone_method">By phone</label>
+                <br>
+                <span id="radio_alert"></span>   
             </div>
             <div class="contact_form">
                 <p>Contact days:</p>
@@ -120,7 +125,8 @@
                 <input type="checkbox" name="contact_days" value="friday" id="friday"><label for="friday">Friday</label>
                 <input type="checkbox" name="contact_days" value="saturday" id="saturday"><label for="saturday">Saturday</label>
                 <input type="checkbox" name="contact_days" value="sunday" id="sunday"><label for="sunday">Sunday</label>
-                
+                <br>
+                <span id="checkbox_alert"></span>
             </div>
             <div class="contact_form">
                 <label class="message" for="msg">Your message:</label>
@@ -130,7 +136,7 @@
             </div>
             <div class="contact_method">
                 <button type="reset">Clear</button>
-                <button type="submit">Submit</button>
+                <button type="submit" id="submit">Submit</button>
             </div>
             </form>
         </div>
