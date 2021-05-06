@@ -193,7 +193,7 @@ function validRadio(){
 //         return true;
 //     }
 // }
-var groupOfCheckboxes = document.getElementsByName("contact_days");
+var groupOfCheckboxes = document.getElementsByName("contactdays[]");
 function checkCheckbox() {
     let checkbox_alert =  document.getElementById("checkbox_alert");
     let checkboxChecked = function() {
@@ -206,7 +206,7 @@ function checkCheckbox() {
     }
     if (checkboxChecked() === false) {
         checkbox_alert.classList.add("a");
-        checkbox_alert.checked.remove("b");
+        checkbox_alert.classList.remove("b");
         checkbox_alert.innerHTML = "You need to choose one option"
         return false;
     } else {
