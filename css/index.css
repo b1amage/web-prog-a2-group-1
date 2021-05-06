@@ -46,7 +46,7 @@ main {
 .product,
 .feature {
     border: 3px solid black;
-    margin: 20px 30px;
+    margin: 20px 50px;
     text-align: center;
 }
 

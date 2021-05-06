@@ -102,7 +102,7 @@ div.contact_form label.message{
 #msg{
     width: 100%
 }
-#alert{
+#alert, #name_alert, #phone_alert, #email_alert, #radio_alert, #checkbox_alert{
     font-size: 15px;
 }
 .a{
@@ -162,7 +162,7 @@ div.contact_form label.message{
         font-size: 30px;
         padding: 20px;
     }
-    #alert{
+    #alert, #name_alert, #phone_alert, #email_alert, #radio_alert, #checkbox_alertt{
         font-size: 10px;
     }
 }
