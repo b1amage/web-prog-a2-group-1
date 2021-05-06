@@ -225,6 +225,10 @@ function validateCheckboxes() {
 document.getElementById("full_name").addEventListener("input", validateName);
 document.getElementById("email").addEventListener("input", validateEmail);
 document.getElementById("phone").addEventListener("input", validatePhone);
+document.getElementById("email_method").addEventListener("input", validRadio);
+document.getElementById("phone_method").addEventListener("input", validRadio);
+validateCheckboxes();
+document.getElementById("msg").addEventListener("input", validMessage);
 
 
 //Valdiate all fields
