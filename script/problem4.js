@@ -240,5 +240,17 @@ function validateform(event){
     }
 }
 
+function clear() {
+    let name_alert = document.getElementById("name_alert");
+    let email_alert = document.getElementById("email_alert");
+    let phone_alert = document.getElementById("phone_alert");
+    let radio_alert = document.getElementById("radio_alert");
+    let checkbox_alert = document.getElementById("checkbox_alert");
+    let message_alert = document.getElementById("alert");
+    let alerts = [name_alert, email_alert, phone_alert, radio_alert, checkbox_alert, message_alert];
+    alerts.forEach(alert => alert.innerHTML = "");
+}
+
 // Submit all form
 document.querySelector("form").addEventListener("submit", validateform);
+document.querySelector("form").addEventListener("click", clear);
