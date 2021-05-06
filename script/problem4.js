@@ -184,7 +184,7 @@ function validRadio(){
 // Function that have at lease checkbox is checked
 function validateCheckbox(){ 
     var checkbox_alert =  document.getElementById("checkbox_alert");
-        if (document.getElementById("monday").checked === false && document.getElementById("tuesday").checked === false && document.getElementById("wednesday").checked === false && document.getElementById("thursday").checked === false && document.getElementById("friday").checked === false && document.getElementById("saturday").checked === false && document.getElementById("sunday").checked === false ){
+        if (document.getElementById("monday").checked == false && document.getElementById("tuesday").checked == false && document.getElementById("wednesday").checked == false && document.getElementById("thursday").checked == false && document.getElementById("friday").checked == false && document.getElementById("saturday").checked == false && document.getElementById("sunday").checked == false ){
             checkbox_alert.classList.add("a");
             checkbox_alert.classList.remove("b");
             checkbox_alert.innerHTML = "You need to choose one date";
