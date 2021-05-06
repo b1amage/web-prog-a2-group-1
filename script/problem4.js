@@ -182,7 +182,6 @@ function validRadio(){
 }
 
 // Function that have at lease checkbox is checked
-<<<<<<< HEAD
 // function validCheckbox(){ 
 //     var checkbox_alert =  document.getElementsById("checkbox_alert");
 //     if (document.getElementById("monday").checked === false && document.getElementById("tuesday").checked === false && document.getElementById("wednesday").checked === false && document.getElementById("thursday").checked === false && document.getElementById("friday").checked === false && document.getElementById("saturday").checked === false && document.getElementById("sunday").checked === false ){
@@ -206,19 +205,6 @@ function checkCheckbox() {
         return false;
     }
     if (checkboxChecked() === false) {
-=======
-function validateCheckbox(){ 
-    var checkbox_alert = document.getElementsById("checkbox_alert");
-    var has_checked = false;
-    var check = document.getElementsByName("contactdays[]")
-    for (var i = 0; i< check.length; i++){
-        if (check[i].checked){
-            has_checken = true;
-            break;
-        }
-    }
-    if (has_checked == false){
->>>>>>> 4fb757c5d57c4b5d98e8f9573e2bb5f117ffb931
         checkbox_alert.classList.add("a");
         checkbox_alert.checked.remove("b");
         checkbox_alert.innerHTML = "You need to choose one option"
@@ -246,11 +232,7 @@ document.getElementById("msg").addEventListener("input", validMessage);
 
 //Valdiate all fields
 function validateform(event){
-<<<<<<< HEAD
     if(!validateName() || !validateEmail() || !validatePhone() || !validRadio() || !checkCheckbox() || !validMessage()) {
-=======
-    if(!validateName() || !validateEmail() || !validatePhone() || !validRadio() || !validateCheckbox() || !validMessage()) {
->>>>>>> 4fb757c5d57c4b5d98e8f9573e2bb5f117ffb931
         event.preventDefault(); // If there is invalid input, prevent the form from being submitted by cancelling the event
     } else {
         return true; // Submit the form when all inputs are valid
