@@ -16,17 +16,23 @@ main {
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
-.store-container::-webkit-scrollbar {
+.store-container::-webkit-scrollbar,
+.product-container::-webkit-scrollbar,
+.feature-container::-webkit-scrollbar {
     display: none;
 }
   
 /* Hide scrollbar for IE, Edge and Firefox */
-.store-container {
+.store-container,
+.product-container,
+.feature-container {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
 }
 
-.store-container:hover {
+.store-container:hover,
+.product-container:hover
+.feature-container:hover {
     cursor: pointer;
 }
 
@@ -44,7 +50,8 @@ main {
 
 .store,
 .product,
-.feature {
+.feature,
+.feature-last {
     border: 3px solid black;
     margin: 20px 50px;
     text-align: center;
@@ -52,20 +59,23 @@ main {
 
 .store-container .store h3,
 .product-container .product h3,
-.feature-container .feature h3 {
+.feature-container .feature h3,
+.feature-container .feature-last h3 {
     text-align: center;
     width: 100%;
 }
 
 .store-container .store h3,
 .product-container .product h3,
-.feature-container .feature h3 {
+.feature-container .feature h3,
+.feature-container .feature-last h3 {
     padding: 15px 0px;
 }
 
 .store a img:hover, 
 .product a img:hover,
-.feature a img:hover{
+.feature a img:hover,
+.feature-last a img:hover {
     cursor: pointer;
 }
 
@@ -87,7 +97,8 @@ h3 a {
 
 .store .overlay,
 .product .overlay,
-.feature .overlay {
+.feature .overlay,
+.feature-last .overlay {
     position: absolute;
     /* top: 0;
     left: 0;
@@ -104,7 +115,8 @@ h3 a {
 
 .store:hover .overlay,
 .product:hover .overlay,
-.feature:hover .overlay {
+.feature:hover .overlay,
+.feature-last:hover .overlay {
     opacity: 0.95;
 }
 
