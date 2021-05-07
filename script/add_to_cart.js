@@ -9,12 +9,18 @@ var quantity1 = 0;
 
 // if the add button is clicked we will do something
 addButton.addEventListener('click', () => {
-    // increase the quantiy
-    quantity1++;
-    // Alert the added products
-    window.alert(`${productName1} has been added!`);
-    // Set to local storage
-    localStorage.setItem('price1', price1);
-    localStorage.setItem('quantity1', quantity1);
-    localStorage.setItem('productName1', productName1);
+    // Check if the user has logged in
+    if (sessionStorage.getItem("successLogin")) {
+        // increase the quantiy
+        quantity1++;
+        // Alert the added products
+        window.alert(`${productName1} has been added!`);
+        // Set to local storage
+        localStorage.setItem('price1', price1);
+        localStorage.setItem('quantity1', quantity1);
+        localStorage.setItem('productName1', productName1);
+    } else {
+        window.alert("Please log in first");
+    }
+
 })
