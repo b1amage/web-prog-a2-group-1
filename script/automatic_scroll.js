@@ -1,4 +1,4 @@
-var horMargin = 50;
+var horMargin = 40;
 
 // Duplicate the length of the container
 function setup(container, items) {
@@ -52,6 +52,9 @@ function autoScroll(containerName, item) {
         stop = 'false';
     }
     if (items.length > 5) {
+        container.style.overflowY = "hidden";
+        container.style.overflowX = "scroll";
+        container.style.flexWrap = "nowrap";
         setup(container, items);
         setInterval(function() {
             startScroll(container, items, stop);
@@ -63,4 +66,4 @@ function autoScroll(containerName, item) {
 autoScroll("store-container", "store");
 autoScroll("product-container", "product");
 autoScroll("feature-container first", "feature first");
-autoScroll("feature-container last", "feature last");
+autoScroll("feature-container last", "feature-last");
