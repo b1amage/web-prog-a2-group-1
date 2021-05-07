@@ -185,6 +185,7 @@ function validRadio(){
 var groupOfCheckboxes = document.getElementsByName("contactdays[]");
 function checkCheckbox() {
     let checkbox_alert =  document.getElementById("checkbox_alert");
+    // function checked if at least one checkbox is checked
     let checkboxChecked = function() {
         for (let i = 0; i < groupOfCheckboxes.length; i++) {
             if (groupOfCheckboxes[i].checked) {
@@ -193,6 +194,7 @@ function checkCheckbox() {
         }
         return false;
     }
+    // Function check if no checkbox is checked, display an error message
     if (checkboxChecked() === false) {
         checkbox_alert.classList.add("a");
         checkbox_alert.classList.remove("b");
@@ -230,6 +232,7 @@ function validateform(event){
     }
 }
 
+// A function to clear all error message
 function clear() {
     let name_alert = document.getElementById("name_alert");
     let email_alert = document.getElementById("email_alert");
@@ -243,4 +246,5 @@ function clear() {
 
 // Submit all form
 document.querySelector("form").addEventListener("submit", validateform);
+// Clear button help refresh all error message
 document.getElementById("clear").addEventListener("click", clear);
