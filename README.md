@@ -22,13 +22,13 @@ Nguyen Trong Minh Long - s3878694
 
 ## Contributions:
 
-Nguyen Anh Duy (25%):
+Nguyen Anh Duy (25%): Problem 3
 
 
-Nguyen Luu Quoc Bao (25%):
+Nguyen Luu Quoc Bao (25%): Problem 1, 7, 8
 
 
-Dao Kha Tuan (25%): 
+Dao Kha Tuan (25%): Problem 2, 5, 6
 
  
 Nguyen Trong Minh Long (25%):
@@ -74,5 +74,8 @@ All of the images from another source used in the website (in the store pages an
 - An Nam, FPT, Halo, The Gioi Di Dong, CellPhoneS, GearVn
 - Deerus, FlyP, Impact
 - Babimart, Disney, Fat Brain, Funnyland, MyKingdom
+
+### 6. The sample data
+  We have created three sample data pages named product-detail.html, product-detail2.html, product-detail3.html
 
 
