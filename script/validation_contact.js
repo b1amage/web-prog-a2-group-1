@@ -103,8 +103,8 @@ function validatePhone() {
 
 
 
-//Function to display the remaining words for each key press
-var mess = document.getElementById("alert");
+//Function to count how many words
+var mess = document.getElementById("message_alert");
 function keyboard_press_count(event){
     var current_len = document.getElementById("msg").value.length;
     var needed_len = 0;
@@ -127,7 +127,6 @@ function keyboard_press_count(event){
     }
 }
 
-// Function to count when the words are being delete
 function backspace_count(event){
     var x = event.keyCode
     var current_len = document.getElementById("msg").value.length;
@@ -168,7 +167,6 @@ function validMessage(){
 
 // Function to have at leaste one radio is checked
 function validRadio(){
-    // check radio if there are any radio checked
     var radio_alert = document.getElementById("radio_alert");
     if (document.getElementById("email_method").checked == false && document.getElementById("phone_method").checked == false){
         radio_alert.classList.add("a");
@@ -184,33 +182,65 @@ function validRadio(){
 }
 
 // Function that have at lease checkbox is checked
-function validateCheckbox(){ 
-    var checkbox_alert =  document.getElementById("checkbox_alert");
-    // check if any boxex are checked
-        if (document.getElementById("monday").checked == false && document.getElementById("tuesday").checked == false && document.getElementById("wednesday").checked == false && document.getElementById("thursday").checked == false && document.getElementById("friday").checked == false && document.getElementById("saturday").checked == false && document.getElementById("sunday").checked == false ){
-            checkbox_alert.classList.add("a");
-            checkbox_alert.classList.remove("b");
-            checkbox_alert.innerHTML = "You need to choose one date";
-             return false;
-        } else {
-            return true;
+var groupOfCheckboxes = document.getElementsByName("contactdays[]");
+function checkCheckbox() {
+    let checkbox_alert =  document.getElementById("checkbox_alert");
+    let checkboxChecked = function() {
+        for (let i = 0; i < groupOfCheckboxes.length; i++) {
+            if (groupOfCheckboxes[i].checked) {
+                return true;
+            }
         }
+        return false;
+    }
+    if (checkboxChecked() === false) {
+        checkbox_alert.classList.add("a");
+        checkbox_alert.classList.remove("b");
+        checkbox_alert.innerHTML = "You need to choose one option"
+        return false;
+    } else {
+        checkbox_alert.innerHTML = "";
+        return true;
+    }
+}
+
+// Function help check the display error message
+function validateCheckboxes() {
+    for (let i = 0; i < groupOfCheckboxes.length; i++) {
+        groupOfCheckboxes[i].addEventListener("change", checkCheckbox);
+    }
 }
 
 // Inform the users whether the inputs are valid or not while they are typing
 document.getElementById("full_name").addEventListener("input", validateName);
 document.getElementById("email").addEventListener("input", validateEmail);
 document.getElementById("phone").addEventListener("input", validatePhone);
+document.getElementById("email_method").addEventListener("input", validRadio);
+document.getElementById("phone_method").addEventListener("input", validRadio);
+validateCheckboxes();
+
 
 
 //Valdiate all fields
 function validateform(event){
-    if(!validateName() || !validateEmail() || !validatePhone() || !validRadio() || !validateCheckbox() || !validMessage()) {
+    if(!validateName() || !validateEmail() || !validatePhone() || !validRadio() || !checkCheckbox() || !validMessage()) {
         event.preventDefault(); // If there is invalid input, prevent the form from being submitted by cancelling the event
     } else {
         return true; // Submit the form when all inputs are valid
     }
 }
 
+function clear() {
+    let name_alert = document.getElementById("name_alert");
+    let email_alert = document.getElementById("email_alert");
+    let phone_alert = document.getElementById("phone_alert");
+    let radio_alert = document.getElementById("radio_alert");
+    let checkbox_alert = document.getElementById("checkbox_alert");
+    let message_alert = document.getElementById("message_alert");
+    let alerts = [name_alert, email_alert, phone_alert, radio_alert, checkbox_alert, message_alert];
+    alerts.forEach(alert => alert.innerHTML = "");
+}
+
 // Submit all form
 document.querySelector("form").addEventListener("submit", validateform);
+document.getElementById("clear").addEventListener("click", clear);

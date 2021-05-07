@@ -132,10 +132,10 @@
                 <label class="message" for="msg">Your message:</label>
                 <br>
                 <textarea required id="msg" name="message" rows="15" cols="150" placeholder="Enter your message here!" onkeyup="keyboard_press_count(event)" onkeydown="backspace_count(event)"></textarea>
-                <span id="alert"></span>
+                <span id="message_alert"></span>
             </div>
             <div class="contact_method">
-                <button type="reset">Clear</button>
+                <button type="reset" id="clear">Clear</button>
                 <button type="submit" id="submit">Submit</button>
             </div>
             </form>
