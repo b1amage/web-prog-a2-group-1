@@ -1,12 +1,9 @@
 // a function to validate name
 function validateName(){
-    let name = document.getElementById("full_name").value;
+    let name = document.getElementById("full_name").value.length;
     let name_alert = document.getElementById("name_alert");
-    // regex to check valid of name
-    let checkName = /(([0-9_~!@#$%^&*-]*){1,}[a-zA-Z]([0-9_~!@#$%^&*-]*){1,}){3,}/;
-
-    // use regex to check name
-    if (checkName.test(name)){
+    // Check if the name is longer than 3 charracters
+    if (name >= 3 ){
         name_alert.classList.remove("a");
         name_alert.classList.add("b");
         name_alert.innerHTML = "Valid name";
