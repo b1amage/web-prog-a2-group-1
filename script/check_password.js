@@ -17,3 +17,15 @@ function checkPassword() {
         return false;
     }
 }
+
+let passwordField = document.getElementById("password");
+// A function to hide the display of error message
+function hide() {
+    let errorMessage = document.getElementById("error");
+    errorMessage.style.display = 'none';   
+};
+
+// Hide the error message when users focus at the password field or typing the new password
+passwordField.onfocus = hide;
+passwordField.addEventListener("input", hide);
+
