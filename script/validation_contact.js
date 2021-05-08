@@ -9,6 +9,7 @@ function validateName(){
         name_alert.innerHTML = "Valid name";
         return true;
     } else {
+        // if not return false and display error message
         name_alert.classList.remove("b");
         name_alert.classList.add("a");
         name_alert.innerHTML = "Invalid name";;
@@ -103,47 +104,55 @@ function validatePhone() {
 //Function to count how many words
 var mess = document.getElementById("message_alert");
 function keyboard_press_count(event){
+    // Get current length of message
     var current_len = document.getElementById("msg").value.length;
     var needed_len = 0;
-    var y = event.keyCode;
+    // if the length of the message is below 50, display a red error message that show how many words to reach 50 words
     if (current_len < 50){        
         needed_len = 50 - current_len;
         mess.classList.remove("b");
         mess.classList.add("a");
         mess.innerHTML = `You have ${needed_len} words left to reach 50 words`;
     } else if (current_len <= 500 && current_len >= 50){
+        // if the message is within the range of 50 to 500, display a valid that said how many words to reach 500
         needed_len = 500 - current_len;
         mess.classList.remove("a");
         mess.classList.add("b");
         mess.innerHTML = `You have ${needed_len} words left to reach 500 words`;
-    } else {
+    } else { // display an error message when you reach over 500 words
             needed_len = current_len - 500;
             mess.classList.remove("b");
             mess.classList.add("a");
-            mess.innerHTML = `You have ${needed_len} over the limmit`
+            mess.innerHTML = `You have ${needed_len} over the limmit`;
     }
 }
 
+// Function help if the user delete a character in the message area, the number of words will be added
 function backspace_count(event){
+    // get the keycode of the key being press
     var x = event.keyCode
+    // get current length
     var current_len = document.getElementById("msg").value.length;
     var needed_len = 0;
+    // get keycode of backspace = 8
     if (x== 8){
         if (current_len < 50){
+            // if the length of the message is below 50, display a red error message that show how many words to reach 50 words
             needed_len = 50 - current_len;
             mess.classList.remove("b");
             mess.classList.add("a");
             mess.innerHTML = `You have ${needed_len} words left to reach 50 words`;
         }else if (current_len < 500){
+            // if the message is within the range of 50 to 500, display a valid that said how many words to reach 500
             needed_len = 500 - current_len;
             mess.classList.remove("a");
             mess.classList.add("b");
             mess.innerHTML = `You have ${needed_len} words left to reach 500 words`;
-        } else {
+        } else {// display an error message when you reach over 500 words
             needed_len = current_len - 500;
             mess.classList.remove("b");
             mess.classList.add("a");
-            mess.innerHTML = `Delete ${needed_len} letters`;
+            mess.innerHTML = `You have ${needed_len} over the limmit`;
         }
     }
 }
@@ -166,11 +175,13 @@ function validMessage(){
 function validRadio(){
     var radio_alert = document.getElementById("radio_alert");
     if (document.getElementById("email_method").checked == false && document.getElementById("phone_method").checked == false){
+        // display a message in red when it is invalid
         radio_alert.classList.add("a");
         radio_alert.classList.remove("b");
         radio_alert.innerHTML = "You have to choose one option";
         return false;
     } else {
+        // remove red css and add green text css to display a message when it is valid
         radio_alert.classList.add("b");
         radio_alert.classList.remove("a");
         radio_alert.innerHTML = "Valid";
@@ -198,12 +209,13 @@ function checkCheckbox() {
         checkbox_alert.innerHTML = "You need to choose one option"
         return false;
     } else {
+        // erase the error message
         checkbox_alert.innerHTML = "";
         return true;
     }
 }
 
-// Function help check the display error message
+// Function help check the display error message when checking the checkbox directly
 function validateCheckboxes() {
     for (let i = 0; i < groupOfCheckboxes.length; i++) {
         groupOfCheckboxes[i].addEventListener("change", checkCheckbox);
@@ -243,5 +255,5 @@ function clear() {
 
 // Submit all form
 document.querySelector("form").addEventListener("submit", validateform);
-// Clear button help refresh all error message
+// Clear button help refresh all error message and input
 document.getElementById("clear").addEventListener("click", clear);
