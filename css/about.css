@@ -79,6 +79,7 @@ body
     transition: 0.8s;
 }
 .avatar-box:hover{
+    cursor: pointer;
     height: 420px;
 }
 .avatar-box .img-box{
