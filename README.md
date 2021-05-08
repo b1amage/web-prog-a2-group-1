@@ -31,7 +31,7 @@ Nguyen Luu Quoc Bao (25%): Problem 1, 7, 8
 Dao Kha Tuan (25%): Problem 2, 5, 6
 
  
-Nguyen Trong Minh Long (25%):
+Nguyen Trong Minh Long (25%): Problem 4, 9
 
 
 ## Responsive Devices-Configuration
