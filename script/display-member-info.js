@@ -19,27 +19,26 @@ function offOverlay() {
     document.querySelector('html').style.overflowY = 'scroll';
 }   
 
-// Create an overlay when clicking on the box 
-duyBox.onclick = () => {
+// This function display the info of the box due to the screen
+function displayInfo(name) {
     document.querySelector('html').style.overflow = 'hidden';
     overlay.style.display = 'block';
-    duy.style.display = 'block';
+    name.style.display = 'block';
+}
+
+// Create an overlay when clicking on the box 
+duyBox.onclick = () => {
+    displayInfo(duy);
 };
 
 baoBox.onclick = () => {
-    document.querySelector('html').style.overflow = 'hidden';
-    overlay.style.display = 'block';
-    bao.style.display = 'block';
+    displayInfo(bao);
 };
 
 longBox.onclick = () => {
-    document.querySelector('html').style.overflow = 'hidden';
-    overlay.style.display = 'block';
-    long.style.display = 'block';
+    displayInfo(long);
 };
 
 tuanBox.onclick = () => {
-    document.querySelector('html').style.overflow = 'hidden';
-    overlay.style.display = 'block';
-    tuan.style.display = 'block';
+    displayInfo(tuan);
 };
